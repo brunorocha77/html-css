@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Query</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <h1>Meu Site</h1>
-        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <i id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
         <menu id="items">
             <ul>
                 <li><a href="#">Opção 1</a></li>
@@ -35,6 +36,14 @@
                 items.style.display = 'none'
             } else {
                 items.style.display = 'block'
+            }
+        }
+
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                items.style.display = 'block'
+            } else {
+                items.style.display = 'none'
             }
         }
     </script>
